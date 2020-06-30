@@ -6,19 +6,50 @@
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 			<style>
-			body {
-    background-color: black;
-    color: rgba(255,255,255,0.8);
-}
+				body {
+    			background-color: black;
+    			color: rgba(255,255,255,0.8);
+				}
+				#landing{
+					height: 100vh;
+					background-image: url('asset/fotis-fotopoulos-LJ9KY8pIH3E-unsplash.jpg');
+					background-position: center;
+					background-size: cover;
+					background-repeat: no-repeat;
+					background-attachment: fixed;
+					z-index: -1;
+				}
+				#mainText{
+    			margin-top: 30vh;
+				}
 			</style>
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
 
     <body>
-    <h1>
-    Daffa Shafwan 2
-    </h1>
+ 		<div class="navbar-fixed">
+    	<nav class="black">
+        <div class="container">
+          <div class="nav-wrapper">
+                <a href="#" class="brand-logo">daffashafwan</a>
+                <ul class="right hide-on-med-and-down" id="navList">
+                    <li><a href="#landing">Home</a></li>
+                    <li><a href="#intro">About Me</a></li>
+                    <li><a href="#work">My Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+          </div>
+        </div>
+   	 </nav>
+		</div>
+		<div class="section" id="landing">
+        <h5 id="mainText" class="center">My Name Is</h5>
+        <h1 style="color: white;"  class="center">
+            <b>Daffa</b> Shafwan
+        </h1>
+        <h6 id="mainText" class="center">A Developer</h6>
+		</div>
 
       <!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="js/materialize.min.js"></script>
