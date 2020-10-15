@@ -1,199 +1,112 @@
-  <!DOCTYPE html>
-  <html>
+<!DOCTYPE html>
+<html>
     <head>
-    <title>daffashafwan's portfolio</title>
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-      <!-- Compiled and minified CSS -->
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
-			<!-- Compiled and minified JavaScript -->
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-			<script>
-			 document.addEventListener('DOMContentLoaded', function() {
-    		var elems = document.querySelectorAll('.fixed-action-btn');
-				var instances = M.FloatingActionButton.init(elems, {
-						direction: 'up'
-				});
-  		});
-  		
-			</script>
-			<script src="https://kit.fontawesome.com/d51321de3e.js" crossorigin="anonymous"></script>
-			<style>
-			.col.s1 .tooltiptext {
-				visibility: hidden;
-				width: 120px;
-				background-color: black;
-				color: #fff;
-				text-align: center;
-				border-radius: 6px;
-				padding: 5px 0;
-
-				/* Position the tooltip */
-				position: absolute;
-				z-index: 1;
-			}
-			.col.s1:hover .tooltiptext {
-					visibility: visible;
-				}
-			
-				#landing{
-					height: 100vh;
-					background-image: url('asset/fotis-fotopoulos-LJ9KY8pIH3E-unsplash.jpg');
-					background-position: center;
-					background-size: cover;
-					background-repeat: no-repeat;
-					background-attachment: fixed;
-					z-index: -1;
-				}
-				#mainText{
-    			margin-top: 30vh;
-				}
-			</style>
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>daffashafwan's portfolio</title>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.fixed-action-btn');
+        var instances = M.FloatingActionButton.init(elems, {
+        direction: 'up'
+        });
+        });
+        
+        </script>
+        <script src="https://kit.fontawesome.com/d51321de3e.js" crossorigin="anonymous"></script>
+        <style type="text/css" media="screen">
+        .content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        }
+        
+        ul {
+        list-style: none;
+        display: block;
+        left: 50%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        text-align: center;
+        list-style-type: none;
+        }
+        li {
+        text-decoration: none;
+        display: inline;
+        right: 50%;
+        }
+        li a {
+        text-decoration-color: black;
+        color: #ff8000;
+        text-decoration: none;
+        padding: 8px;
+        
+        }
+        li a:hover {
+        color: white;
+        background-color: #ff8000;
+        padding: 8px;
+        
+        }
+        @media screen and (max-width: 44em) {
+        body {
+        margin:1.5em 0;
+        }
+        
+        ul {
+        padding:0 .5em;
+        }
+        
+        ul > li {
+        width:100%;
+        display: block;
+        padding:.45em .25em;
+        margin:0 0 .55em 0;
+        
+        }
+        
+        }
+        
+        </style>
+        
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
-
     <body>
- 		<div class="navbar-fixed">
-    	<nav class="black">
-        <div class="container">
-          <div class="nav-wrapper">
-                <a href="#" class="brand-logo">daffashafwan</a>
-                <ul class="right hide-on-med-and-down" id="navList">
+        <div class="content" id="landing" style="width: 40%">
+            <h2 style="color: #ff8000;"  class="center">
+            <b>daffashafwan</b>
+            </h2>
+            <h5 style="color: black;"  class="center">
+            Selamat datang di Web Daffa Shafwan
+            </h5>
+            <div>
+                <ul style="margin-top: 30px" id="navList">
                     <li><a href="#landing">Home</a></li>
-                    <li><a href="#intro">About Me</a></li>
-                    <li><a href="#work">My Projects</a></li>
+                    <li><a href="https://about.me/daffashafwan">About Me</a></li>
+                    <li><a href="pages/projects.html">My Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-          </div>
+            </div>
+            
         </div>
-   	 </nav>
-		</div>
-		<div class="section" id="landing">
-        <h5 style="color: white;" id="mainText" class="center">My Name Is</h5>
-        <h1 style="color: white;"  class="center">
-            <b>Daffa</b> Shafwan
-        </h1>
-        <h6 id="mainText" class="center">A Developer</h6>
-		</div>
-		
-		<div class="fixed-action-btn">
-    <a class="btn-floating btn-large  blue-grey darken-4">
-        <i class="fa fa-share-alt"></i>
-    </a>
-    <ul>
-        <li><a target="_blank" href="https://www.twitter.com/nawfahsaffad" class="btn-floating cyan lighten-1"><i class="fab fa-twitter"></i></a></li>
-        <li><a target="_blank" href="https://www.github.com/daffashafwan" class="btn-floating grey darken-3"> <i class="fab fa-github"></i></a></li>
-        <li><a target="_blank" href="https://www.linkedin.com/in/daffashafwan" class="btn-floating blue-grey lighten-1"><i class="fab fa-linkedin"></i></a></li>
-    </ul>
-</div>
-
-<div id="intro" class="section white">
-    <div class="container">
-        <div class="row">
-            <div  class="col s12">
-                <h2 style="color:black" class="center header"> "One day, you'll leave this world behind. So live a life you will remember"</h2>
-            </div>
-        </div>
-        <div class="row center">
-            <dic class="col s12 m12 offset-l2 l8 ">
-                <h5 style="color:black" class="center">Daffa Shafwan</h5>
-                <p style="color:black">
-                    Hi There !, My name is Moch. Daffa Shafwan Chairullah, just simply call me daffa or shafwan. I am a student of Muhammadiyah University Of Malang.
-                    My primary interest in information and technology field are Web Development and BioInformatics, recently i worked as laboratory assistant
-                    in Informatics Laboratory at Muhammadiyah University of Malang 
-                    <br />
-                    <i style="color:black">“Do whatever you want, as long you don't violate the rules” </i> 
-                </p>
-            </dic>
-        </div>
-    </div>
-</div>
-
-<div class="section" style="background-color: #141414;" id="work">
-    <div class="container">
-        <h3 style="color: white;" class="header text_b center">My Projects </h3>
-        <div class="row ">
-            <div class="col s12 m12 l4">
-                <div class="card hoverable black">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="asset/Screenshot_2020-07-01_19-47-06.png">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator purple-text text-lighten-5">Website Portofolio Fotografer<i class="mdi-navigation-more-vert right"></i></span>
-                        <p><a href="https://www.pamer.rf.gd" class="purple-text text-lighten-5" href="#">Project link</a></p>
-                        <p><a href="https://www.github.com/daffashafwan/Tugas-Besar-Web" class="purple-text text-lighten-5" href="#">Repo link</a></p>
-                    </div>
-                    <div class="card-reveal  black">
-                        <span class="card-title purple-text text-lighten-5">Website Portofolio Fotografer<i class="mdi-navigation-close right"></i></span>
-                        <p style="color:white">Website ini merupakan website yang dibuat untuk memenuhi Tugas Besar Pemrograman Web, ada fitur upload foto dan cari foto pada web ini.
-                        Teknologi yang digunakan adalah Laravel dan Bootstrap</p>
-                    </div>
-                </div>
-            </div>              
-        </div>
-    </div>
-</div>
-
-<div class="section" style="background-color: #101010;" id="skillsets">
-    <div class="container">
-        <div class="row">
-            <h1 class="center white-text">
-                My Skillset
-            </h1>
-        </div>
-        <div class="row center">
-        	<div class="flexbox" style="display: flex;flew-wrap: wrap;justify-content: center;align-items: center;">
-            <div class="col s1 ">
-                <img class="responsive-img" src="asset/c.png">
-                <span class="tooltiptext">C Language</span>
-            </div>
-            <div class="col s1 ">
-                <img  class="responsive-img" src="asset/c++.png">
-                <span class="tooltiptext">C++ Language</span>
-            </div>
-            <div class="col s1 ">
-                <img class="responsive-img"  src="asset/java.png">
-                <span class="tooltiptext">Java Language</span>
-            </div>
-            <div class="col s1 ">
-                <img class="responsive-img"  src="asset/web-dev.png">
-                <span class="tooltiptext">Web Development</span>
-            </div>
-            <div class="col s1 ">
-                <img class="responsive-img"  src="asset/python.png">
-                <span class="tooltiptext">Python Language</span>
-            </div>
-            <div class="col s1 ">
-                <img class="responsive-img"  src="asset/Laravel.png">
-                <span class="tooltiptext">Laravel Framework</span>
-            </div>
-            <div class="col s1 ">
-                <img class="responsive-img"  src="asset/PHP.svg">
-                <span class="tooltiptext">PHP Language</span>
-            </div>
-           </div>
-        </div>
-    </div>
-</div>
-
-
-<footer class="section page-footer black">
-    <div class="container center-align">
-        &#169; Daffashafwan 2020
-    </div>
-</footer>
-
-
-      <!--JavaScript at end of body for optimized loading-->
-      <script type="text/javascript" src="js/materialize.min.js"></script>
-      <script>
-      $(document).ready(function(){
-	    $('.parallax').parallax();
-			});
-      </script>
+        
+        
+        <!--JavaScript at end of body for optimized loading-->
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script>
+        $(document).ready(function(){
+        $('.parallax').parallax();
+        });
+        </script>
     </body>
-  </html>
+</html>
