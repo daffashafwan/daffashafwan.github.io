@@ -10,7 +10,8 @@
 
 <body>
   <div class="container">
-    <h2 id="coba">halo</h2>
+    <h4 id="iterate_prediksi"></h4>
+    <h2 id="hasil_prediksi"></h2>
     <video class="input_video"></video>
     <canvas class="output_canvas" width="1280px" height="720px"></canvas>
   </div>
@@ -22,7 +23,7 @@ const videoElement = document.getElementsByClassName('input_video')[0];
 videoElement.style.display = "none";
 const canvasElement = document.getElementsByClassName('output_canvas')[0];
 const canvasCtx = canvasElement.getContext('2d');
-
+var iterator = 0;
 function onResults(results) {
     var datas = [];
     var hand_landmarks = [];
@@ -87,8 +88,12 @@ function onResults(results) {
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
+            window.stop()
             var json = JSON.parse(xhr.responseText);
-            document.getElementById("coba").innerHTML = json['predictions']; 
+            alert("Hasil Prediksi : " + json['predictions']);
+            document.getElementById("iterate_prediksi").innerHTML = "Prediksi ke : " + iterator; 
+            document.getElementById("hasil_prediksi").innerHTML = json['predictions']; 
+            iterator++;
             //alert(json['predictions']);
         }
     };
