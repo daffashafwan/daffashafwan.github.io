@@ -15,7 +15,8 @@
     <canvas class="output_canvas" width="1280px" height="720px"></canvas>
   </div>
 </body>
-  
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script type="module">
 const videoElement = document.getElementsByClassName('input_video')[0];
 videoElement.style.display = "none";
@@ -61,11 +62,27 @@ function onResults(results) {
     }
     //console.log(datas.length + " " + datas[0].length);
     
+    // const url = "https://us-central1-valid-dragon-312515.cloudfunctions.net/predict-bisindo";
+    // var datass = {
+    //   "instances" : [hand_landmarks]
+    // };
+    // var json_data = JSON.stringify(datass);
+    // alert(typeof json_data)
+    // axios({
+    //   method: 'post',
+    //   url: url,
+    //   headers: {
+    //         'Content-Type': 'application/json',
+    //     },
+    //   data:{
+    //     json_data
+    //   }
+    // }).then(data=>console.log(json_data)).catch(err=>console.log(err))
 
     var xhr = new XMLHttpRequest();
     var url = "https://us-central1-valid-dragon-312515.cloudfunctions.net/predict-bisindo";
     xhr.open("POST", url, true);
-    xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+    //xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
@@ -73,9 +90,10 @@ function onResults(results) {
             console.log("berhasil");
         }
     };
-    var data = JSON.stringify({"instances": [hand_landmarks]});
-    console.log(data)
-    xhr.send(data);
+    var data_json = JSON.stringify({instances: [hand_landmarks]});
+    console.log(typeof data_json);    
+    console.log(data_json);
+    xhr.send(data_json);
     
     // document.getElementById("coba").innerHTML = landmarks;  
   }
