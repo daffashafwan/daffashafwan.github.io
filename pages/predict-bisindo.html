@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>HTML Elements Reference</title>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h4 id="iterate_prediksi"></h4>
+    <h2 id="hasil_prediksi"></h2>
+    <video class="input_video"></video>
+    <canvas class="output_canvas" width="1280px" height="720px"></canvas>
+  </div>
+</body>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="module">
+const videoElement = document.getElementsByClassName('input_video')[0];
+videoElement.style.display = "none";
+const canvasElement = document.getElementsByClassName('output_canvas')[0];
+const canvasCtx = canvasElement.getContext('2d');
+var iterator = 0;
+function onResults(results) {
+    var datas = [];
+    var hand_landmarks = [];
+  canvasCtx.save();
+  canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+  canvasCtx.drawImage(
+      results.image, 0, 0, canvasElement.width, canvasElement.height);
+  if (results.multiHandLandmarks) {
+    if(Object.keys(results.multiHandLandmarks).length == 1){
+        hand_landmarks.push(0.0);
+        hand_landmarks.push(0.9);
+        var x = 0;
+        while (x < 63) {
+          hand_landmarks.push(0.0);
+          x++;
+        }
+      }else{
+        hand_landmarks.push(0.9);
+        hand_landmarks.push(0.9);
+      }
+    var j = 0;
+    for (const landmarks of results.multiHandLandmarks) {
+      drawConnectors(canvasCtx, landmarks, HAND_CONNECTIONS,
+                     {color: '#00FF00', lineWidth: 5});
+      drawLandmarks(canvasCtx, landmarks, {color: '#FF0000', lineWidth: 2});
+      // hand_landmarks.push(landmarks[j]['x']);
+      // hand_landmarks.push(landmarks[j]['y']);
+      // hand_landmarks.push(landmarks[j]['z']);
+      // j++;
+      //console.log(Object.keys(landmarks).length);
+      for (let index = 0; index < Object.keys(landmarks).length; index++) {
+          hand_landmarks.push(landmarks[index]['x']);
+          hand_landmarks.push(landmarks[index]['y']);
+          hand_landmarks.push(landmarks[index]['z']);
+      }
+      var datas = [hand_landmarks]
+    }
+    //console.log(datas.length + " " + datas[0].length);
+    
+    // const url = "https://us-central1-valid-dragon-312515.cloudfunctions.net/predict-bisindo";
+    // var datass = {
+    //   "instances" : [hand_landmarks]
+    // };
+    // var json_data = JSON.stringify(datass);
+    // alert(typeof json_data)
+    // axios({
+    //   method: 'post',
+    //   url: url,
+    //   headers: {
+    //         'Content-Type': 'application/json',
+    //     },
+    //   data:{
+    //     json_data
+    //   }
+    // }).then(data=>console.log(json_data)).catch(err=>console.log(err))
+
+    var xhr = new XMLHttpRequest();
+    var url = "https://us-central1-valid-dragon-312515.cloudfunctions.net/predict-bisindo";
+    xhr.open("POST", url, true);
+    //xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+    xhr.setRequestHeader("Accept", "*/*");
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            window.stop()
+            var json = JSON.parse(xhr.responseText);
+            alert("Hasil Prediksi : " + json['predictions']);
+            document.getElementById("iterate_prediksi").innerHTML = "Prediksi ke : " + iterator; 
+            document.getElementById("hasil_prediksi").innerHTML = json['predictions']; 
+            iterator++;
+            //alert(json['predictions']);
+        }
+    };
+    var data_json = JSON.stringify({instances: [hand_landmarks]});
+    console.log(typeof data_json);    
+    console.log(data_json);
+    xhr.send(data_json);
+    
+    // document.getElementById("coba").innerHTML = landmarks;  
+  }
+  canvasCtx.restore();
+}
+
+
+const hands = new Hands({locateFile: (file) => {
+  return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`;
+}});
+hands.setOptions({
+  maxNumHands: 2,
+  minDetectionConfidence: 0.5,
+  minTrackingConfidence: 0.5
+});
+hands.onResults(onResults);
+const camera = new Camera(videoElement, {
+  onFrame: async () => {
+    await hands.send({image: videoElement});
+  },
+  width: 1280,
+  height: 720
+});
+camera.start();
+</script>  
+</html>

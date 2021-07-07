@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+jjjjj
+        <title>daffashafwan's portfolio</title>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.fixed-action-btn');
+        var instances = M.FloatingActionButton.init(elems, {
+        direction: 'up'
+        });
+        });
+        
+        </script>
+        <script src="https://kit.fontawesome.com/d51321de3e.js" crossorigin="anonymous"></script>
+        <style type="text/css" media="screen">
+        .content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        }
+        
+        ul {
+        list-style: none;
+        display: block;
+        left: 50%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        text-align: center;
+        list-style-type: none;
+        }
+        li {
+        text-decoration: none;
+        display: inline;
+        right: 50%;
+        }
+        li a {
+        text-decoration-color: black;
+        color: #ff8000;
+        text-decoration: none;
+        padding: 8px;
+        
+        }
+        li a:hover {
+        color: white;
+        background-color: #ff8000;
+        padding: 8px;
+        
+        }
+        body {
+        background-color: white;
+        color: black;
+        }
+        .dark-mode {
+        background-color: black;
+        color: white;
+        }
+        
+        @media screen and (max-width: 44em) {
+        body {
+        background-color: white;
+        color: black;
+        margin:1.5em 0;
+        }
+        
+        ul {
+        padding:0 .5em;
+        }
+        
+            
+        ul > li {
+        width:100%;
+        display: block;
+        padding:.45em .25em;
+        margin:0 0 .55em 0;
+        
+        }
+        
+        }
+        
+        </style>
+        
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <a onclick="myFunction()" class="btn orange accent-4 waves-effect btn-small" style="position: absolute;top: 16px;right: 16px;">
+            <i class="small material-icons">brightness_medium</i>
+        </a>
+        <div class="content" id="landing" style="width: 40%">
+            <h2 style="color: #ff8000;"  class="center">
+            <b>daffashafwan</b>
+            </h2>
+            <h5 class="center">
+            Selamat datang di Web Portofolio Daffa Shafwan
+            </h5>
+            
+            
+            <div>
+                <ul style="margin-top: 30px" id="navList">
+                    <li><a href="#landing">Home</a></li>
+                    <li><a href="https://about.me/daffashafwan">About Me</a></li>
+                    <li><a href="pages/projects.html">My Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+        </div>
+        
+        
+        <!--JavaScript at end of body for optimized loading-->
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script>
+            function myFunction() {
+               var element = document.body;
+               element.classList.toggle("dark-mode");
+            }
+        $(document).ready(function(){
+        $('.parallax').parallax();
+        });
+        </script>
+    </body>
+</html>
