@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <title>HTML Elements Reference</title>
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
@@ -10,18 +11,20 @@
 
 <body>
   <div class="container">
-    <h2 id="coba">halo</h2>
+    <h4 id="iterate_prediksi"></h4>
+    <h2 id="hasil_prediksi"></h2>
     <video class="input_video"></video>
     <canvas class="output_canvas" width="1280px" height="720px"></canvas>
   </div>
 </body>
-  
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script type="module">
 const videoElement = document.getElementsByClassName('input_video')[0];
 videoElement.style.display = "none";
 const canvasElement = document.getElementsByClassName('output_canvas')[0];
 const canvasCtx = canvasElement.getContext('2d');
-
+var iterator = 0;
 function onResults(results) {
     var datas = [];
     var hand_landmarks = [];
@@ -61,21 +64,44 @@ function onResults(results) {
     }
     //console.log(datas.length + " " + datas[0].length);
     
+    // const url = "https://us-central1-valid-dragon-312515.cloudfunctions.net/predict-bisindo";
+    // var datass = {
+    //   "instances" : [hand_landmarks]
+    // };
+    // var json_data = JSON.stringify(datass);
+    // alert(typeof json_data)
+    // axios({
+    //   method: 'post',
+    //   url: url,
+    //   headers: {
+    //         'Content-Type': 'application/json',
+    //     },
+    //   data:{
+    //     json_data
+    //   }
+    // }).then(data=>console.log(json_data)).catch(err=>console.log(err))
 
     var xhr = new XMLHttpRequest();
     var url = "https://us-central1-valid-dragon-312515.cloudfunctions.net/predict-bisindo";
     xhr.open("POST", url, true);
-    xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+    //xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+    xhr.setRequestHeader("Accept", "*/*");
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
+            window.stop()
             var json = JSON.parse(xhr.responseText);
-            console.log("berhasil");
+            alert("Hasil Prediksi : " + json['predictions']);
+            document.getElementById("iterate_prediksi").innerHTML = "Prediksi ke : " + iterator; 
+            document.getElementById("hasil_prediksi").innerHTML = json['predictions']; 
+            iterator++;
+            //alert(json['predictions']);
         }
     };
-    var data = JSON.stringify({"instances": [hand_landmarks]});
-    console.log(data)
-    xhr.send(data);
+    var data_json = JSON.stringify({instances: [hand_landmarks]});
+    console.log(typeof data_json);    
+    console.log(data_json);
+    xhr.send(data_json);
     
     // document.getElementById("coba").innerHTML = landmarks;  
   }
