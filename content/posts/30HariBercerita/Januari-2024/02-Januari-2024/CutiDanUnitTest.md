@@ -5,13 +5,9 @@ draft: false
 tags: ["30haribercerita", "30hbc"]
 ---
 
+![b](/content/posts/30HariBercerita/Januari-2024/02-Januari-2024/images/onleave660-660x416.jpg)
+
 # Cuti dan Unit Test
-
-<div style="text-align:center;">
-<img src="/assets/posts/onleave660-660x416.jpg" alt="MarineGEO circle logo" style="height: 150px;"/>
-</div>
-
-</br>
 
 Pada hari kedua tahun 2024, saya sebenarnya mengambil cuti. Pagi hari dimulai dengan melakukan _bucin_ dengan sepatu lari saya. Saya mencoba jogging dari jam 6 pagi sampai sekitar jam setengah 8 pagi, dapat sekitar 6km. Cukup membuat tubuh bugar dan berkeringat. Setelah itu saya lanjutkan untuk membersihkan diri dan memulai aktivitas di hari cuti saya.
 
