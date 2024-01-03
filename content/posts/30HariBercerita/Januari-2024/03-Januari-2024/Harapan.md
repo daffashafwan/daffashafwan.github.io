@@ -2,6 +2,7 @@
 title: "Harapan"
 date: 2024-01-03T21:59:01+07:00
 draft: false
+tags: ["30haribercerita", "30hbc"]
 ---
 
 ![Hope](/content/posts/30HariBercerita/Januari-2024/03-Januari-2024/images/savvas-kalimeris-ITF6okD33dM-unsplash.jpg)
@@ -17,8 +18,9 @@ Di semester awal belajar informatika, saya benar benar keteteran, saya tidak tau
 Setidaknya itu yang saya rasakan pada satu hingga dua bulan pertama kuliah informatika. Tapi semua itu berubah ketika saya mulai akrab dengan salah satu dosen di semester satu. Dosen tersebut menjadi pembimbing kedua di skripsi saya.
 
 Selepas kelas pagi yang diampu oleh beliau, saya diajak ngobrol berdua di dekat lift GKB 4. Kondisi gedung lumayan sepi. Percakapan antara kami berdua cukup panjang dan menyentuh. Salah satu yang paling saya ingat adalah, 
-> _"Ojok nyerah sinau yo le, awakmu disekolahno nang kene iku harapan wong tuomu, ojok sia sia no"_
-> ( jangan menyerah belajar ya nak, kamu disekolahkan disini itu ya harapan orang tuamu, jangan disia-siakan)
+
+_"Ojok nyerah sinau yo le, awakmu disekolahno nang kene iku harapan wong tuomu, ojok sia sia no"_
+( jangan menyerah belajar ya nak, kamu disekolahkan disini itu ya harapan orang tuamu, jangan disia-siakan)
 
 Masih sangat lekat sekali membekas di kepala saya. Kata kata nya sebenarnya sederhana, bahkan seringkali saya dengar. Tapi begitu beliau yang ngucap, rasanya benar benar berbeda, seakan menjadi tamparan keras buat saya yang pada momen itu memang ada kepikiran untuk menyudahi kuliah saya.
 
