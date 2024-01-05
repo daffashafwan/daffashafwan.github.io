@@ -1,7 +1,7 @@
 ---
 title: "05 Januari 2024"
 date: 2024-01-05T23:40:17+07:00
-draft: true
+draft: false
 tags: ["30haribercerita", "30hbc"]
 ---
 
