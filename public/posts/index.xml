@@ -11,7 +11,18 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 07 Jan 2024 21:12:36 +0700</lastBuildDate><atom:link href="https://daffashafwan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Jan 2024 22:31:37 +0700</lastBuildDate><atom:link href="https://daffashafwan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>08 Januari 2024</title>
+      <link>https://daffashafwan.github.io/posts/30haribercerita/januari-2024/08-januari-2024/</link>
+      <pubDate>Mon, 08 Jan 2024 22:31:37 +0700</pubDate>
+      
+      <guid>https://daffashafwan.github.io/posts/30haribercerita/januari-2024/08-januari-2024/</guid>
+      <description>Bikin RestAPI pakai V Judul yang kalian baca tidak salah, hehe hari ini mari kita ngoding karena saya tidak tau mau cerita apa hari ini jadi saya cerita ngoding aja ya hehe.
+Sebelumnya apa itu rest API ? REST API (Representational State Transfer Application Programming Interface) adalah cara bagi komputer atau sistem untuk berkomunikasi melalui internet. Ini memungkinkan aplikasi untuk saling berinteraksi dan bertukar data.
+Dalam dunia web, REST API memungkinkan sistem yang berbeda untuk saling berkomunikasi dengan menggunakan permintaan HTTP sederhana seperti GET, POST, PUT, DELETE.</description>
+    </item>
+    
     <item>
       <title>06 Januari 2024 &amp; 07 Januari 2024 [Edisi Weekend]</title>
       <link>https://daffashafwan.github.io/posts/30haribercerita/januari-2024/06-januari-2024-07-januari-2024/</link>
