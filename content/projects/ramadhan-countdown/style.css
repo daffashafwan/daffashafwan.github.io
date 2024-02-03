@@ -1,0 +1,142 @@
+/* general styling */
+:root {
+    --smaller: .75;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    align-items: center;
+    background: rgb(9, 26, 51);
+    background: linear-gradient(90deg, rgba(9, 26, 51, 1) 0%, rgba(29, 61, 12, 1) 51%, rgba(9, 43, 50, 1) 95%);
+    display: flex;
+    font-family: -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen-Sans,
+        Ubuntu,
+        Cantarell,
+        "Helvetica Neue",
+        sans-serif;
+}
+
+.container {
+    color: #333;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#headline {
+    color: #ffffff;
+}
+
+.main-title {
+    color: white;
+}
+
+h1 {
+    font-weight: normal;
+    letter-spacing: .125rem;
+    text-transform: uppercase;
+}
+
+.emoji {
+    display: none;
+    padding: 1rem;
+}
+
+.emoji span {
+    font-size: 4rem;
+    padding: 0 .5rem;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.4);
+    /* Use RGBA for transparency */
+    border: 1px solid #ddd;
+    /* Add border for better visibility */
+    border-radius: 10px;
+    margin: 10px;
+    padding: 15px;
+    color: #ffffff;
+}
+
+.scrollable-box {
+    max-height: 300px;
+    /* Adjust the max-height as needed */
+    overflow-y: auto;
+}
+
+.footer {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.card-body {
+    padding: 0;
+}
+
+@media (max-width: 767px) {
+    /* Adjust the max-width as needed for your specific layout breakpoint */
+    #countdown .row {
+        flex-direction: column;
+    }
+}
+
+@media (max-height: 680px) {
+    .main-content {
+        padding-top: 20%;
+    }
+}
+
+.card-body {
+    padding: 0;
+    font-size: 1em; /* Initial font size, adjust as needed */
+
+    /* Responsive font size adjustments */
+    @media (min-width: 768px) {
+        font-size: 2em; /* Adjust font size for medium-sized screens */
+    }
+
+    @media (min-width: 992px) {
+        font-size: 2.5em; /* Adjust font size for large screens */
+    }
+
+    @media (min-width: 1200px) {
+        font-size: 3em; /* Adjust font size for extra-large screens */
+    }
+}
+
+/* Responsive adjustments for the card size */
+@media (min-width: 768px) {
+    .card {
+        max-width: 600px; /* Adjust max-width for medium-sized screens */
+    }
+}
+
+@media (min-width: 992px) {
+    .card {
+        max-width: 800px; /* Adjust max-width for large screens */
+    }
+}
+
+@media (min-width: 1200px) {
+    .card {
+        max-width: 1000px; /* Adjust max-width for extra-large screens */
+    }
+}
