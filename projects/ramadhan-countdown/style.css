@@ -70,6 +70,7 @@ h1 {
     margin: 10px;
     padding: 15px;
     color: #ffffff;
+    min-height: 200px;
 }
 
 .scrollable-box {
@@ -87,8 +88,15 @@ h1 {
     width: 100%;
 }
 
-.card-body {
+.card-body span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 0;
+}
+
+.hadits-content {
+    margin-top: 10%;
 }
 
 @media (max-width: 767px) {
