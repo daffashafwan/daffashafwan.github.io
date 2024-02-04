@@ -20,7 +20,7 @@
     <div class="container main-content">
         <div class="col">
             <div class="container main-title">
-                <h1>Countdown to Ramadhan</h1>
+                <h1 id="headline">Countdown to Ramadhan</h1>
             </div>
             <div id="countdown">
                 <div class="row">
@@ -59,9 +59,10 @@
                     <div class="row">
                         <div class="col-sm">
                             <h1 id="hadits-title">Hadits Hari Ini</h1>
-                            <i style="cursor: pointer;" onclick="getHadits()" id="reloadButton" class="bi bi-arrow-counterclockwise"></i>
+                            <i style="cursor: pointer;" onclick="getHadits()" id="reloadButton"
+                                class="bi bi-arrow-counterclockwise"></i>
                         </div>
-                    </div>          
+                    </div>
                     <div class="scrollable-box">
                         <p id="hadits-arab"></p>
                         <p id="hadits-indo"></p>
@@ -90,41 +91,48 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         $(document).ready(function () {
-            $.get('https://api.aladhan.com/v1/hToG/01-09-1445', function (data) {
-                const second = 1000,
-                    minute = second * 60,
-                    hour = minute * 60,
-                    day = hour * 24;
+            let todayDate = new Date(),
+                dd = String(todayDate.getDate()).padStart(2, "0"),
+                mm = String(todayDate.getMonth() + 1).padStart(2, "0"),
+                yyyy = todayDate.getFullYear();
+            todayDateString = dd + "-" + mm + "-" + yyyy
+            let oneRamadhanDate = "01-09-1445"
+            $.get(`https://api.aladhan.com/v1/gToH/${todayDateString}`, function (data) {
+                let hijriYear = data.data.hijri.year
+                if ((data.data.hijri.month.number) > 9) {
+                    hijriYear = parseInt(data.data.hijri.year) + 1
+                }
+                oneRamadhanDate = "01-09-" + hijriYear.toString()
+                console.log(oneRamadhanDate)
+                $.get(`https://api.aladhan.com/v1/hToG/${oneRamadhanDate}`, function (data) {
+                    const second = 1000,
+                        minute = second * 60,
+                        hour = minute * 60,
+                        day = hour * 24;
 
-                ramadanDate = data.data.gregorian.date
-                ramadanDateSplit = ramadanDate.split("-")
+                    ramadanDate = data.data.gregorian.date
+                    ramadanDateSplit = ramadanDate.split("-")
 
-                let today = new Date(),
-                    dd = String(today.getDate()).padStart(2, "0"),
-                    mm = String(today.getMonth() + 1).padStart(2, "0"),
-                    yyyy = today.getFullYear(),
-                    birthday = ramadanDateSplit[1] + "/" + ramadanDateSplit[0] + "/" + ramadanDateSplit[2];
+                    ramadhan = ramadanDateSplit[1] + "/" + ramadanDateSplit[0] + "/" + ramadanDateSplit[2];
 
+                    const countDown = new Date(ramadhan).getTime(),
+                        x = setInterval(function () {
 
-                today = mm + "/" + dd + "/" + yyyy;
-                const countDown = new Date(birthday).getTime(),
-                    x = setInterval(function () {
+                            const now = new Date().getTime(),
+                                distance = countDown - now;
+                            document.getElementById("days").innerText = Math.floor(distance / (day)),
+                                document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+                                document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+                                document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
 
-                        const now = new Date().getTime(),
-                            distance = countDown - now;
-
-                        document.getElementById("days").innerText = Math.floor(distance / (day)),
-                            document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
-                            document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
-                            document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
-
-                        if (distance < 0) {
-                            document.getElementById("headline").innerText = "It's my birthday!";
-                            document.getElementById("countdown").style.display = "none";
-                            document.getElementById("content").style.display = "block";
-                            clearInterval(x);
-                        }
-                    }, 0)
+                            if (distance < 0) {
+                                document.getElementById("headline").innerText = "It's Ramadhan";
+                                document.getElementById("countdown").style.display = "none";
+                                document.getElementById("content").style.display = "block";
+                                clearInterval(x);
+                            }
+                        }, 0)
+                });
             });
             getHadits();
         });
