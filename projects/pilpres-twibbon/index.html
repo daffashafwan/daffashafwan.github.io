@@ -184,6 +184,8 @@
             });
             safeModeToggle.addEventListener('change', () => {
                 barbarMode = safeModeToggle.checked;
+                //always false, for security reason (UU ITE slurr)
+                barbarMode = false
                 console.log('Safe Mode:', barbarMode);
             });
             changeTwibbonBtn.addEventListener('click', (event) => {
