@@ -113,10 +113,14 @@ menu:
       name: posts
       url: /posts/
       weight: 21
+    - identifier: projects
+      name: projects
+      url: /projects/
+      weight: 22
     - identifier: 30HariBercerita
       name: 30 Hari Bercerita
       url: /tags/30haribercerita/
-      weight: 22
+      weight: 23
     
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
