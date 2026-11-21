@@ -1,0 +1,61 @@
+---
+import Base from '../layouts/Base.astro';
+import { experience, site } from '../data/site';
+---
+
+<Base title="About" description="Daffa Shafwan, software engineer yang fokus di backend.">
+  <p class="eyebrow">$ cat about.md</p>
+  <h1 class="page-title">Hai, gue Daffa.</h1>
+  <p class="lede">
+    Software engineer, banyak di sisi backend. Sekarang Go jadi bahasa utama, sambil belajar bioinformatics.
+  </p>
+
+  <section class="section two-col" style="margin-top:0">
+    <div>
+      <div class="section-head"><h2>interests</h2></div>
+      <ul class="plain-list">
+        <li>Backend engineering</li>
+        <li>Bioinformatics engineering</li>
+        <li>Large Language Model</li>
+      </ul>
+    </div>
+    <div>
+      <div class="section-head"><h2>skills</h2></div>
+      <ul class="plain-list">
+        <li>Web programming (Go, Java, PHP, Python, Ruby)</li>
+        <li>Machine learning dan deep learning</li>
+        <li>Data analytics dan visualization</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>experience</h2></div>
+    <ol class="timeline">
+      {experience.map((e) => (
+        <li>
+          <h3>{e.company}</h3>
+          {e.roles.map((r) => (
+            <div class="role">
+              <span>{r.title}{r.note ? ` · ${r.note}` : ''}</span>
+              <span>{r.period}</span>
+            </div>
+          ))}
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>education</h2></div>
+    <p style="margin:0">Informatika, Universitas Muhammadiyah Malang</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>contact</h2></div>
+    <p style="margin:0">
+      Email ke <a href={`mailto:${site.email}`}>{site.email}</a>, atau cari gue di
+      {site.social.map((s, i) => (<><a href={s.url} rel="me noopener">{s.name}</a>{i < site.social.length - 1 ? ', ' : '.'}</>))}
+    </p>
+  </section>
+</Base>

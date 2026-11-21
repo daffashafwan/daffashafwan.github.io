@@ -1,0 +1,38 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { getPosts, formatDate, isoDate, readingTime } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((post, i) => ({
+    params: { slug: post.id },
+    props: { post, newer: posts[i - 1], older: posts[i + 1] },
+  }));
+}
+
+const { post, newer, older } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Base title={post.data.title} type="article">
+  <article>
+    <header class="post-head">
+      <p class="eyebrow"><a href="/posts/" style="text-decoration:none">← writing</a></p>
+      <h1>{post.data.title}</h1>
+      <div class="meta">
+        <time datetime={isoDate(post.data.date)}>{formatDate(post.data.date)}</time>
+        <span>{readingTime(post.body)} min baca</span>
+      </div>
+      <div class="tags">
+        {post.data.tags.map((t) => <a class="tag" href={`/tags/${t}/`}>#{t}</a>)}
+      </div>
+    </header>
+    <div class="prose"><Content /></div>
+  </article>
+
+  <nav class="post-nav" aria-label="Post navigation">
+    {older && <a href={`/posts/${older.id}/`}>← {older.data.title}</a>}
+    {newer && <a class="next" href={`/posts/${newer.id}/`}>{newer.data.title} →</a>}
+  </nav>
+</Base>

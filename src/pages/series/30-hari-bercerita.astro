@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostList from '../../components/PostList.astro';
+import { getPosts, SERIES_TAG } from '../../lib/posts';
+
+const TOTAL = 30;
+const entries = (await getPosts()).filter((p) => p.data.tags.includes(SERIES_TAG));
+const done = Math.min(TOTAL, entries.reduce((n, p) => n + p.data.days, 0));
+---
+
+<Base title="30 Hari Bercerita" description="Tantangan menulis setiap hari selama 30 hari.">
+  <p class="eyebrow">$ series --name 30haribercerita</p>
+  <h1 class="page-title">30 Hari Bercerita</h1>
+  <p class="lede">
+    Tantangan menulis tiap hari selama 30 hari. Isinya catatan sehari-hari, dari kerjaan, tutorial, sampai
+    renungan random.
+  </p>
+  <div class="progress" aria-hidden="true">
+    {Array.from({ length: TOTAL }, (_, i) => <i class={i < done ? 'done' : ''} />)}
+  </div>
+  <div class="progress-label" style="margin-bottom:2rem">{done}/{TOTAL} hari tertulis</div>
+  <PostList posts={entries} />
+</Base>

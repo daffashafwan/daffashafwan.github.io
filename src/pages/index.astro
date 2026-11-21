@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import PostList from '../components/PostList.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import SeriesBox from '../components/SeriesBox.astro';
+import { getPosts } from '../lib/posts';
+import { projects, now } from '../data/site';
+
+const latest = (await getPosts()).slice(0, 4);
+---
+
+<Base>
+  <section class="hero">
+    <p class="eyebrow">$ whoami</p>
+    <h1>Daffa Shafwan, a <em>shaf</em>-ware engineer.</h1>
+    <p>
+      <strong>Backend engineer</strong> di tiket.com. Nulis Go di siang hari, ngulik bioinformatics dan LLM di
+      waktu luang, dan mencatat semuanya di sini.
+    </p>
+    <div class="cta">
+      <a class="btn primary" href="/posts/">Baca tulisan</a>
+      <a class="btn" href="/projects/">Lihat project</a>
+      <a class="btn" href="/about/">Tentang gue</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>now</h2></div>
+    <ul class="now">
+      {now.map((n) => <li>{n}</li>)}
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>projects</h2><a href="/projects/">semua →</a></div>
+    <div class="cards">
+      {projects.map((p) => <ProjectCard project={p} />)}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>writing</h2><a href="/posts/">semua →</a></div>
+    <PostList posts={latest} />
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>series</h2></div>
+    <SeriesBox />
+  </section>
+</Base>
