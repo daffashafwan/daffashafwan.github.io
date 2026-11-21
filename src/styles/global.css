@@ -200,3 +200,9 @@ a.tag:hover { color: var(--accent); border-color: var(--accent); }
   html { scroll-behavior: auto; }
   .card { transition: none; }
 }
+
+.skills { display: grid; grid-template-columns: 9.5rem 1fr; gap: 0.6rem 1rem; margin: 0; align-items: baseline; }
+.skills dt { font-family: var(--mono); font-size: 0.8125rem; color: var(--muted); }
+.skills dd { margin: 0; }
+.timeline .points { margin-top: 0.6rem; font-size: 0.9375rem; }
+@media (max-width: 36rem) { .skills { grid-template-columns: 1fr; gap: 0.2rem; } .skills dd { margin-bottom: 0.6rem; } }
