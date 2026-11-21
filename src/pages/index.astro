@@ -14,13 +14,13 @@ const latest = (await getPosts()).slice(0, 4);
     <p class="eyebrow">$ whoami</p>
     <h1>Daffa Shafwan, a <em>shaf</em>-ware engineer.</h1>
     <p>
-      <strong>Backend engineer</strong> di tiket.com, membangun pricing dan booking system yang melayani jutaan
-      request. Nulis Go dan Java, dan mencatat semuanya di sini.
+      <strong>Backend engineer</strong> at tiket.com, building pricing and booking systems that serve millions
+      of requests. I write Go and Java, and take notes on everything here.
     </p>
     <div class="cta">
-      <a class="btn primary" href="/posts/">Baca tulisan</a>
-      <a class="btn" href="/projects/">Lihat project</a>
-      <a class="btn" href="/about/">Tentang gue</a>
+      <a class="btn primary" href="/posts/">Read posts</a>
+      <a class="btn" href="/projects/">See projects</a>
+      <a class="btn" href="/about/">About me</a>
     </div>
   </section>
 
@@ -32,14 +32,14 @@ const latest = (await getPosts()).slice(0, 4);
   </section>
 
   <section class="section">
-    <div class="section-head"><h2>projects</h2><a href="/projects/">semua →</a></div>
+    <div class="section-head"><h2>projects</h2><a href="/projects/">all →</a></div>
     <div class="cards">
       {projects.map((p) => <ProjectCard project={p} />)}
     </div>
   </section>
 
   <section class="section">
-    <div class="section-head"><h2>writing</h2><a href="/posts/">semua →</a></div>
+    <div class="section-head"><h2>writing</h2><a href="/posts/">all →</a></div>
     <PostList posts={latest} />
   </section>
 

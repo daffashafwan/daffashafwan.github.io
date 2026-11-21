@@ -8,16 +8,16 @@ const entries = (await getPosts()).filter((p) => p.data.tags.includes(SERIES_TAG
 const done = Math.min(TOTAL, entries.reduce((n, p) => n + p.data.days, 0));
 ---
 
-<Base title="30 Hari Bercerita" description="Tantangan menulis setiap hari selama 30 hari.">
+<Base title="30 Hari Bercerita" description="A challenge to write every day for 30 days.">
   <p class="eyebrow">$ series --name 30haribercerita</p>
   <h1 class="page-title">30 Hari Bercerita</h1>
   <p class="lede">
-    Tantangan menulis tiap hari selama 30 hari. Isinya catatan sehari-hari, dari kerjaan, tutorial, sampai
-    renungan random.
+    A challenge to write every day for 30 days: daily notes on work, tutorials, and random thoughts.
+    Posts are written in Indonesian.
   </p>
   <div class="progress" aria-hidden="true">
     {Array.from({ length: TOTAL }, (_, i) => <i class={i < done ? 'done' : ''} />)}
   </div>
-  <div class="progress-label" style="margin-bottom:2rem">{done}/{TOTAL} hari tertulis</div>
+  <div class="progress-label" style="margin-bottom:2rem">{done}/{TOTAL} days written</div>
   <PostList posts={entries} />
 </Base>

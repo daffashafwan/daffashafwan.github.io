@@ -8,9 +8,9 @@ const done = Math.min(TOTAL, entries.reduce((n, p) => n + p.data.days, 0));
 
 <a class="series-box" href="/series/30-hari-bercerita/">
   <h3>30 Hari Bercerita</h3>
-  <p>Tantangan menulis tiap hari selama 30 hari. Catatan sehari-hari, dari kerjaan sampai hal random.</p>
+  <p>A challenge to write every day for 30 days. Daily notes from work to random thoughts, in Indonesian.</p>
   <div class="progress" aria-hidden="true">
     {Array.from({ length: TOTAL }, (_, i) => <i class={i < done ? 'done' : ''} />)}
   </div>
-  <div class="progress-label">{done}/{TOTAL} hari tertulis</div>
+  <div class="progress-label">{done}/{TOTAL} days written</div>
 </a>

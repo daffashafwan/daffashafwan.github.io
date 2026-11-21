@@ -3,7 +3,7 @@ import ramadhan from '../assets/projects/ramadhan-countdown.png';
 
 export const site = {
   title: 'daffashafwan',
-  description: 'Backend engineer di tiket.com. Menulis soal Go, distributed system, dan hidup sebagai orang tech.',
+  description: 'Backend engineer di tiket.com. Writing about Go, distributed systems, and life as a tech guy.',
   email: 'dev.daffa.shafwan@gmail.com',
   social: [
     { name: 'GitHub', url: 'https://github.com/daffashafwan' },
@@ -17,7 +17,7 @@ export const projects = [
     title: 'Ramadhan Countdown',
     year: '2024',
     description:
-      'Hitung mundur menuju Ramadhan lengkap dengan hadits harian dan lagu latar. Dibuat buat seru-seruan sambil nunggu bulan puasa.',
+      'A countdown to Ramadan with a daily hadith and background nasheed. Built for fun while waiting for the fasting month.',
     stack: ['HTML', 'Bootstrap', 'JavaScript'],
     url: '/projects/ramadhan-countdown/',
     image: ramadhan,
@@ -26,7 +26,7 @@ export const projects = [
     title: 'Pilpres 2024 Twibbon Generator',
     year: '2024',
     description:
-      'Pose pakai jari sesuai paslon favorit, lalu twibbon-nya nempel otomatis lewat hand tracking di browser. Foto tidak disimpan di server.',
+      'Pose with your fingers for your favourite candidate and the twibbon frame is applied automatically using hand tracking in the browser. Photos are never stored on a server.',
     stack: ['JavaScript', 'MediaPipe Hands', 'Bootstrap'],
     url: '/projects/pilpres-twibbon/',
     image: pilpres,
@@ -34,7 +34,7 @@ export const projects = [
 ];
 
 export const summary =
-  'Backend engineer dengan pengalaman 4+ tahun membangun dan men-scale distributed system di travel-tech. Fokus di sistem pricing dan booking real-time yang melayani jutaan request, dengan perhatian di latency, konsistensi data, dan reliability.';
+  'Backend engineer with 4+ years of experience building and scaling distributed systems in travel-tech. Specialized in real-time pricing and booking systems handling millions of requests, with a focus on latency, data consistency, and reliability.';
 
 export const skills = [
   { label: 'Languages', items: ['Go', 'Java'] },
@@ -50,14 +50,14 @@ export const experience = [
     roles: [
       {
         title: 'Software Engineer II',
-        period: '2022 – sekarang',
+        period: '2022 – present',
         points: [
-          'Merancang dan men-scale pricing system yang melayani jutaan request harian dengan latency rendah dan high availability.',
-          'Meningkatkan akurasi harga di seluruh booking funnel, mengurangi selisih harga dan mencegah revenue leakage.',
-          'Optimasi backend untuk menurunkan latency dan menaikkan throughput saat traffic tinggi.',
-          'Memegang service booking dan pricing yang kritikal, termasuk troubleshooting masalah distributed system lintas service.',
-          'Membangun dan merawat integrasi dengan vendor eksternal agar sinkronisasi data tetap andal dan konsisten.',
-          'Memperkuat observability lewat logging, metrics, dan tracing.',
+          'Design and scale pricing systems serving millions of daily requests with low latency and high availability.',
+          'Improve pricing accuracy across the booking funnel, reducing discrepancies and preventing revenue leakage.',
+          'Drive backend optimizations to reduce latency and improve throughput under high traffic.',
+          'Own critical booking and pricing services, troubleshooting complex distributed-system issues across services.',
+          'Build and maintain integrations with external vendors, keeping data synchronization reliable and consistent.',
+          'Enhance observability through logging, metrics, and tracing.',
         ],
       },
     ],
@@ -69,8 +69,8 @@ export const experience = [
         title: 'Freelance Software Engineer',
         period: '2021 – 2022',
         points: [
-          'Membangun platform e-learning yang scalable untuk klien bisnis.',
-          'Mengerjakan fitur end-to-end, dari requirement sampai deployment.',
+          'Developed scalable e-learning platforms for business clients.',
+          'Delivered features end to end, from requirements to deployment.',
         ],
       },
     ],
@@ -81,14 +81,14 @@ export const experience = [
       {
         title: 'Backend Engineering Intern',
         period: '2021',
-        points: ['Membuat API endpoint dan memperbaiki performa backend.'],
+        points: ['Developed API endpoints and improved backend performance.'],
       },
     ],
   },
 ];
 
 export const now = [
-  'Membangun pricing system di tiket.com (Go, Java)',
-  'Belajar bioinformatics',
-  'Ngulik Large Language Model',
+  'Building pricing systems at tiket.com (Go, Java)',
+  'Learning bioinformatics',
+  'Tinkering with large language models',
 ];
