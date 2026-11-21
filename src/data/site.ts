@@ -3,7 +3,7 @@ import ramadhan from '../assets/projects/ramadhan-countdown.png';
 
 export const site = {
   title: 'daffashafwan',
-  description: 'Backend engineer menulis soal Go, bioinformatics, LLM, dan hidup sebagai orang tech.',
+  description: 'Backend engineer di tiket.com. Menulis soal Go, distributed system, dan hidup sebagai orang tech.',
   email: 'dev.daffa.shafwan@gmail.com',
   social: [
     { name: 'GitHub', url: 'https://github.com/daffashafwan' },
@@ -33,30 +33,62 @@ export const projects = [
   },
 ];
 
+export const summary =
+  'Backend engineer dengan pengalaman 4+ tahun membangun dan men-scale distributed system di travel-tech. Fokus di sistem pricing dan booking real-time yang melayani jutaan request, dengan perhatian di latency, konsistensi data, dan reliability.';
+
+export const skills = [
+  { label: 'Languages', items: ['Go', 'Java'] },
+  { label: 'Backend', items: ['Spring Boot', 'gRPC', 'REST', 'WebSocket'] },
+  { label: 'Distributed systems', items: ['Kafka', 'Redis', 'MongoDB', 'PostgreSQL', 'Debezium CDC'] },
+  { label: 'Infrastructure', items: ['Docker', 'Kubernetes', 'GitHub Actions'] },
+  { label: 'Engineering', items: ['Microservices', 'Caching', 'Observability', 'Testing'] },
+];
+
 export const experience = [
   {
-    company: 'PT Global Tiket Network (tiket.com)',
+    company: 'tiket.com',
     roles: [
-      { title: 'Software Engineer', period: '2023 – sekarang', note: 'Fulltime' },
-      { title: 'Backend Engineer', period: '2022 – 2023', note: 'Intern' },
+      {
+        title: 'Software Engineer II',
+        period: '2022 – sekarang',
+        points: [
+          'Merancang dan men-scale pricing system yang melayani jutaan request harian dengan latency rendah dan high availability.',
+          'Meningkatkan akurasi harga di seluruh booking funnel, mengurangi selisih harga dan mencegah revenue leakage.',
+          'Optimasi backend untuk menurunkan latency dan menaikkan throughput saat traffic tinggi.',
+          'Memegang service booking dan pricing yang kritikal, termasuk troubleshooting masalah distributed system lintas service.',
+          'Membangun dan merawat integrasi dengan vendor eksternal agar sinkronisasi data tetap andal dan konsisten.',
+          'Memperkuat observability lewat logging, metrics, dan tracing.',
+        ],
+      },
     ],
   },
   {
-    company: 'PT Sekawan Media Informatika',
-    roles: [{ title: 'Backend Engineer', period: 'Agu 2021 – Nov 2021', note: 'Intern' }],
+    company: 'SmartLBM',
+    roles: [
+      {
+        title: 'Freelance Software Engineer',
+        period: '2021 – 2022',
+        points: [
+          'Membangun platform e-learning yang scalable untuk klien bisnis.',
+          'Mengerjakan fitur end-to-end, dari requirement sampai deployment.',
+        ],
+      },
+    ],
   },
   {
-    company: 'Yayasan LBM Al Falah Sragen (smartlbm)',
-    roles: [{ title: 'Fullstack Engineer', period: 'Jan 2021 – Des 2021', note: '' }],
-  },
-  {
-    company: 'UMM Informatics Laboratory',
-    roles: [{ title: 'Laboratory Teaching Assistant', period: 'Sep 2019 – Jan 2022', note: '' }],
+    company: 'Sekawan Media',
+    roles: [
+      {
+        title: 'Backend Engineering Intern',
+        period: '2021',
+        points: ['Membuat API endpoint dan memperbaiki performa backend.'],
+      },
+    ],
   },
 ];
 
 export const now = [
-  'Nulis backend pakai Go di tiket.com',
+  'Membangun pricing system di tiket.com (Go, Java)',
   'Belajar bioinformatics',
   'Ngulik Large Language Model',
 ];

@@ -1,32 +1,23 @@
 ---
 import Base from '../layouts/Base.astro';
-import { experience, site } from '../data/site';
+import { experience, site, skills, summary } from '../data/site';
 ---
 
 <Base title="About" description="Daffa Shafwan, software engineer yang fokus di backend.">
   <p class="eyebrow">$ cat about.md</p>
   <h1 class="page-title">Hai, gue Daffa.</h1>
-  <p class="lede">
-    Software engineer, banyak di sisi backend. Sekarang Go jadi bahasa utama, sambil belajar bioinformatics.
-  </p>
+  <p class="lede">{summary}</p>
 
-  <section class="section two-col" style="margin-top:0">
-    <div>
-      <div class="section-head"><h2>interests</h2></div>
-      <ul class="plain-list">
-        <li>Backend engineering</li>
-        <li>Bioinformatics engineering</li>
-        <li>Large Language Model</li>
-      </ul>
-    </div>
-    <div>
-      <div class="section-head"><h2>skills</h2></div>
-      <ul class="plain-list">
-        <li>Web programming (Go, Java, PHP, Python, Ruby)</li>
-        <li>Machine learning dan deep learning</li>
-        <li>Data analytics dan visualization</li>
-      </ul>
-    </div>
+  <section class="section" style="margin-top:0">
+    <div class="section-head"><h2>skills</h2></div>
+    <dl class="skills">
+      {skills.map((g) => (
+        <>
+          <dt>{g.label}</dt>
+          <dd class="tags">{g.items.map((i) => <span class="tag">{i}</span>)}</dd>
+        </>
+      ))}
+    </dl>
   </section>
 
   <section class="section">
@@ -36,10 +27,13 @@ import { experience, site } from '../data/site';
         <li>
           <h3>{e.company}</h3>
           {e.roles.map((r) => (
-            <div class="role">
-              <span>{r.title}{r.note ? ` · ${r.note}` : ''}</span>
-              <span>{r.period}</span>
-            </div>
+            <>
+              <div class="role">
+                <span>{r.title}</span>
+                <span>{r.period}</span>
+              </div>
+              <ul class="plain-list points">{r.points.map((pt) => <li>{pt}</li>)}</ul>
+            </>
           ))}
         </li>
       ))}
@@ -48,7 +42,7 @@ import { experience, site } from '../data/site';
 
   <section class="section">
     <div class="section-head"><h2>education</h2></div>
-    <p style="margin:0">Informatika, Universitas Muhammadiyah Malang</p>
+    <p style="margin:0">Bachelor of Informatics (Data Science), Universitas Muhammadiyah Malang · GPA 3.93</p>
   </section>
 
   <section class="section">
