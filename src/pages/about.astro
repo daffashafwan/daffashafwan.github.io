@@ -3,9 +3,9 @@ import Base from '../layouts/Base.astro';
 import { experience, site, skills, summary } from '../data/site';
 ---
 
-<Base title="About" description="Daffa Shafwan, software engineer yang fokus di backend.">
+<Base title="About" description="Daffa Shafwan, backend software engineer.">
   <p class="eyebrow">$ cat about.md</p>
-  <h1 class="page-title">Hai, gue Daffa.</h1>
+  <h1 class="page-title">Hi, I am Daffa.</h1>
   <p class="lede">{summary}</p>
 
   <section class="section" style="margin-top:0">
@@ -48,7 +48,7 @@ import { experience, site, skills, summary } from '../data/site';
   <section class="section">
     <div class="section-head"><h2>contact</h2></div>
     <p style="margin:0">
-      Email ke <a href={`mailto:${site.email}`}>{site.email}</a>, atau cari gue di
+      Email me at <a href={`mailto:${site.email}`}>{site.email}</a>, or find me on
       {site.social.map((s, i) => (<><a href={s.url} rel="me noopener">{s.name}</a>{i < site.social.length - 1 ? ', ' : '.'}</>))}
     </p>
   </section>

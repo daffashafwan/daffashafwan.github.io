@@ -9,10 +9,10 @@ posts.forEach((p) => p.data.tags.forEach((t) => counts.set(t, (counts.get(t) ?? 
 const tags = [...counts.entries()].sort((a, b) => b[1] - a[1]);
 ---
 
-<Base title="Writing" description="Tulisan dan catatan harian Daffa.">
+<Base title="Writing" description="Writing and daily notes by Daffa.">
   <p class="eyebrow">$ ls posts/</p>
   <h1 class="page-title">Writing</h1>
-  <p class="lede">Catatan soal engineering, resolusi, dan keseharian.</p>
+  <p class="lede">Notes on engineering, resolutions, and everyday life. Most posts are in Indonesian.</p>
   <div class="tags" style="margin-bottom:1.5rem">
     {tags.map(([t, n]) => <a class="tag" href={`/tags/${t}/`}>#{t} · {n}</a>)}
   </div>
